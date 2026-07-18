@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="es-PE">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Todos los artículos — ModoAhorro</title>
-<meta name="description" content="Todas las guías de ModoAhorro sobre ahorro, deuda, inversión, presupuesto, seguros, impuestos y pensiones en Perú, filtrables por categoría.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="site">
-  <div class="wrap">
-    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none;">Modo<span>Ahorro</span></a></div>
-    <nav class="site">
-      <a href="articulos.html">Artículos</a>
-      <a href="sobre-mi.html">Sobre mí</a>
-    </nav>
-  </div>
-</header>
-
+---
+layout: default
+title: "Todos los artículos"
+description: "Todas las guías de ModoAhorro sobre ahorro, deuda, inversión, presupuesto, seguros, impuestos y pensiones en Perú, filtrables por categoría."
+---
 <section class="hero" style="padding:48px 0 8px;border-bottom:none;">
   <div class="wrap">
     <span class="eyebrow">Todos los artículos</span>
@@ -39,90 +23,23 @@
       <button class="filter-btn" data-filter="seguros">Seguros</button>
       <button class="filter-btn" data-filter="impuestos">Impuestos</button>
       <button class="filter-btn" data-filter="pensiones">Pensiones</button>
+      <button class="filter-btn" data-filter="vivienda">Vivienda</button>
+      <button class="filter-btn" data-filter="economia">Economía</button>
     </div>
 
     <div id="postGrid">
-
-      <a class="post-card" data-category="ahorro" href="articulos/fondo-emergencia-cts.html">
-        <span class="tag">Ahorro</span>
-        <h2>Cómo armar un fondo de emergencia usando tu CTS sin dejarte sin colchón</h2>
-        <p>La CTS es la herramienta de ahorro forzoso más subestimada en Perú. Aquí cómo usarla como base de tu fondo de emergencia sin descuidar el resto.</p>
-        <div class="meta">8 min de lectura</div>
+      {% for post in site.articulos %}
+      <a class="post-card" data-category="{{ post.categories | join: ' ' }}" href="{{ post.url | relative_url }}">
+        {% for cat in post.categories %}<span class="tag">{{ site.data.categories[cat] }}</span>{% endfor %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <div class="meta">{{ post.read_time }} min de lectura</div>
       </a>
-
-      <a class="post-card" data-category="ahorro" href="articulos/metas-de-ahorro.html">
-        <span class="tag">Ahorro</span>
-        <h2>Metas de ahorro: cómo ponerle nombre y plazo a cada sol que guardas</h2>
-        <p>Por qué el ahorro sin objetivo específico se diluye, y cómo estructurar metas que sí se cumplen.</p>
-        <div class="meta">6 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="comparativas" href="articulos/cuentas-ahorro-digitales-peru.html">
-        <span class="tag">Comparativas</span>
-        <h2>Cuentas de ahorro digitales en Perú: qué mirar antes de abrir una</h2>
-        <p>Tasas, comisiones ocultas y letra chica: una guía para comparar cuentas digitales sin caer en el marketing.</p>
-        <div class="meta">7 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="deuda" href="articulos/reducir-deuda-tarjetas.html">
-        <span class="tag">Deuda</span>
-        <h2>Cómo salir de la deuda de tarjeta de crédito sin dejar de vivir</h2>
-        <p>El método bola de nieve, el método avalancha, y cómo negociar directamente con el banco cuando ninguno de los dos alcanza.</p>
-        <div class="meta">9 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="deuda" href="articulos/prestamo-personal-vs-tarjeta.html">
-        <span class="tag">Deuda</span>
-        <h2>Préstamo personal vs. tarjeta de crédito: cuál usar y cuándo</h2>
-        <p>Diferencias reales entre ambos productos, y cómo elegir según el tipo de gasto que quieres financiar.</p>
-        <div class="meta">7 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="inversion" href="articulos/invertir-poco-dinero-peru.html">
-        <span class="tag">Inversión</span>
-        <h2>Empezar a invertir en Perú con poco dinero: por dónde ir primero</h2>
-        <p>Fondos mutuos, depósitos a plazo y el error más común de quien recién empieza: invertir antes de tener colchón.</p>
-        <div class="meta">10 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="presupuesto" href="articulos/presupuesto-50-30-20.html">
-        <span class="tag">Presupuesto</span>
-        <h2>El método 50/30/20 adaptado a soles peruanos</h2>
-        <p>Cómo armar un presupuesto que sí funciona, ajustado a la realidad de vivienda e ingresos en Perú.</p>
-        <div class="meta">7 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="seguros" href="articulos/seguro-vida-soat-eps.html">
-        <span class="tag">Seguros</span>
-        <h2>SOAT, EPS y seguro de vida: qué es obligatorio y qué conviene</h2>
-        <p>Guía para entender qué seguros son obligatorios en Perú y cuáles vale la pena contratar según tu situación.</p>
-        <div class="meta">8 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="impuestos" href="articulos/renta-cuarta-quinta-categoria.html">
-        <span class="tag">Impuestos</span>
-        <h2>Renta de cuarta y quinta categoría: lo que todo independiente debe saber</h2>
-        <p>Diferencias entre ambos regímenes, y qué implica cada uno para tu bolsillo si eres dependiente o independiente.</p>
-        <div class="meta">8 min de lectura</div>
-      </a>
-
-      <a class="post-card" data-category="pensiones" href="articulos/afp-vs-onp.html">
-        <span class="tag">Pensiones</span>
-        <h2>AFP vs. ONP: qué significa realmente elegir tu sistema de pensión</h2>
-        <p>Diferencias reales entre ambos sistemas, y qué factores considerar antes de elegir o cambiar de sistema.</p>
-        <div class="meta">9 min de lectura</div>
-      </a>
-
+      {% endfor %}
     </div>
 
   </div>
 </section>
-
-<footer class="site">
-  <div class="wrap">
-    © 2026 ModoAhorro · Contenido educativo, no es asesoría financiera personalizada.
-  </div>
-</footer>
 
 <script>
   var filterBar = document.getElementById('filterBar');
@@ -139,7 +56,8 @@
 
     var filter = btn.getAttribute('data-filter');
     cards.forEach(function(card){
-      if(filter === 'todos' || card.getAttribute('data-category') === filter){
+      var cats = (card.getAttribute('data-category') || '').split(' ');
+      if(filter === 'todos' || cats.indexOf(filter) !== -1){
         card.classList.remove('is-hidden');
       } else {
         card.classList.add('is-hidden');
@@ -147,6 +65,3 @@
     });
   });
 </script>
-
-</body>
-</html>
