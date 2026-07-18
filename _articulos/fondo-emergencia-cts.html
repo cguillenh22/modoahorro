@@ -9,17 +9,27 @@ read_time: 8
     <p>La Compensación por Tiempo de Servicios (CTS) es, sin que la mayoría lo note, el mecanismo de ahorro forzoso más potente que tiene un trabajador dependiente en Perú. Cada mayo y noviembre, tu empleador deposita un monto equivalente a un sueldo (dividido en dos armadas) en una cuenta a tu nombre. El problema no es que no exista el ahorro — el problema es qué haces con él apenas lo ves disponible.</p>
 
     <div class="calc-widget">
-      <h3>Calculadora de CTS 2026</h3>
+      <div class="calc-widget-inner">
+      <div class="calc-header">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/><line x1="16" y1="18" x2="16" y2="18"/></svg>
+        <h3>Calculadora de CTS 2026</h3>
+      </div>
       <p class="calc-subtitle">Estima cuánto te depositarán en mayo o noviembre.</p>
 
       <div class="calc-field">
-        <label for="cts-sueldo">Sueldo básico mensual (S/)</label>
-        <input type="number" id="cts-sueldo" min="0" step="0.01" value="2000" inputmode="decimal">
+        <label for="cts-sueldo">Sueldo básico mensual</label>
+        <div class="calc-input-wrapper">
+          <span class="calc-prefix">S/</span>
+          <input type="number" id="cts-sueldo" min="0" step="0.01" value="2000" inputmode="decimal">
+        </div>
       </div>
 
       <div class="calc-field">
-        <label for="cts-gratif">Última gratificación recibida (S/) — deja en 0 si no recibiste ninguna</label>
-        <input type="number" id="cts-gratif" min="0" step="0.01" value="2000" inputmode="decimal">
+        <label for="cts-gratif">Última gratificación recibida — deja en 0 si no recibiste ninguna</label>
+        <div class="calc-input-wrapper">
+          <span class="calc-prefix">S/</span>
+          <input type="number" id="cts-gratif" min="0" step="0.01" value="2000" inputmode="decimal">
+        </div>
       </div>
 
       <div class="calc-field">
@@ -43,6 +53,7 @@ read_time: 8
       </div>
 
       <p class="calc-note">Fórmula: (remuneración computable ÷ 12) × meses + (remuneración computable ÷ 360) × días. La remuneración computable incluye 1/6 de tu última gratificación. Estimado referencial — verifica tu caso específico con RR.HH.</p>
+      </div>
     </div>
 
     <h2>Por qué la CTS no es "plata extra"</h2>
