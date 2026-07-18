@@ -184,7 +184,6 @@ article.post .disclaimer{
   color:var(--muted);
   pointer-events:none;
 }
-.calc-input-wrapper input[type="number"]{padding-left:38px;}
 .calc-field input[type="number"],
 .calc-field select{
   width:100%;
@@ -196,6 +195,9 @@ article.post .disclaimer{
   background:var(--paper);
   color:var(--ink);
   transition:border-color .15s, box-shadow .15s;
+}
+.calc-input-wrapper input[type="number"]{
+  padding-left:38px !important;
 }
 .calc-field input[type="number"]:focus,
 .calc-field select:focus{
