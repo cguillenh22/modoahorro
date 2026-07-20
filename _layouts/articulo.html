@@ -5,7 +5,32 @@ layout: default
   <div class="wrap">
     {% for cat in page.categories %}<span class="tag">{{ site.data.categories[cat] }}</span>{% endfor %}
     <h1>{{ page.title }}</h1>
-    <div class="meta">{{ page.read_time }} min de lectura · Actualizado julio 2026</div>
+    <div class="meta">{{ page.read_time }} min de lectura · Actualizado {{ page.updated_label }}</div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "datePublished": "{{ page.date_published }}",
+      "dateModified": "{{ page.date_modified }}",
+      "author": {
+        "@type": "Organization",
+        "name": "ModoAhorro"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ModoAhorro",
+        "url": "{{ site.url }}"
+      },
+      "mainEntityOfPage": "{{ page.url | absolute_url }}",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".direct-answer"]
+      }
+    }
+    </script>
 
     {{ content }}
   </div>
