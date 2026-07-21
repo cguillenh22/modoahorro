@@ -316,6 +316,24 @@ article.post .disclaimer{
 }
 .category-links a:hover{border-color:var(--gold);color:var(--ink);text-decoration:none;}
 
+/* Breadcrumbs */
+.breadcrumbs{
+  padding:20px 0 0;
+  font-size:.82rem;
+  color:var(--muted);
+}
+.breadcrumbs a{color:var(--muted);}
+.breadcrumbs a:hover{color:var(--forest);}
+.breadcrumbs .sep{margin:0 6px;color:var(--line);}
+
+/* Related content */
+.related-section{
+  margin-top:56px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.related-section .section-label{margin-bottom:12px;}
+
 /* Filter bar */
 .filter-bar{
   display:flex;
